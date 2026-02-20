@@ -1,0 +1,12 @@
+{
+  "name": "com.grygtools.addressables",
+  "version": "1.0.0",
+  "displayName": "GrygTools-Addressables",
+  "description": "Simple addressables controller",
+  "unity": "2020.3",
+  "dependencies": {
+    "com.unity.addressables": "1.21.20",
+    "com.unity.textmeshpro": "3.0.6",
+	"com.grygtools.utils": "1.0.0"
+  }
+}
