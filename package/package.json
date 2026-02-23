@@ -1,8 +1,8 @@
 {
-  "name": "com.grygtools.addressables",
+  "name": "com.grygtools.assetmanagement",
   "version": "1.0.0",
-  "displayName": "GrygTools-Addressables",
-  "description": "Simple addressables controller",
+  "displayName": "GrygTools-AssetManagement",
+  "description": "Addressables and pooling",
   "unity": "2020.3",
   "dependencies": {
     "com.unity.addressables": "1.21.20",
