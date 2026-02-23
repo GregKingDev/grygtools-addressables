@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GrygTools.Pooling
 {
     ///Designed as a pooling system for projects using pre 2021 unity versions
-    public class PoolController : MbSingleton<PoolController>
+    public class PoolManager : MbSingleton<PoolManager>
     {
         private class LeaseHandle
         {
@@ -167,14 +167,43 @@ namespace GrygTools.Pooling
 			
             return leaseObject;
         }
-        
-        private IEnumerator DelayedDisable(LeaseHandle handle)
+
+        public void WarmPool(GameObject template, int targetCount)
         {
-            yield return 0;
-            if (handle != null && handle.Obj != null)
+            int validLeaseCount = 0;
+            if(!createdPools.TryGetValue(template, out List<LeaseHandle> pool))
             {
-                handle.Obj.SetActive(false);
+                pool = new List<LeaseHandle>();
+                createdPools[template] = pool;
             }
+            else
+            {
+                for (int i = 0; i < pool.Count; i++)
+                {
+                    LeaseHandle lease = pool[i];
+                    if (lease == null || lease.Obj == null)
+                    {
+                        pool.RemoveAt(i);
+                    }
+                    else
+                    {
+                        validLeaseCount++;
+                    }
+                }
+            }
+
+            for (int i = validLeaseCount; i < targetCount; i++)
+            {
+                LeaseHandle newLease = new LeaseHandle(template);
+                objectToHandleDictionary.Add(newLease.Obj, newLease);
+                pool.Add(newLease);
+                newLease.Return();
+            }
+        }
+        
+        public void WarmPool<T>(T template, int targetCount) where T: MonoBehaviour
+        {
+            WarmPool(template.gameObject, targetCount);
         }
 
         public void ReturnLeasedObj(MonoBehaviour behaviour)
