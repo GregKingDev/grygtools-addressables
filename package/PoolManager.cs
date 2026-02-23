@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace GrygTools.Pooling
+namespace GrygTools.AssetManagement
 {
     ///Designed as a pooling system for projects using pre 2021 unity versions
     public class PoolManager : MbSingleton<PoolManager>

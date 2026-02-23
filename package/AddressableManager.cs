@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceLocations;
-namespace GrygTools.AddressableUtils
+
+namespace GrygTools.AssetManagement
 {
 	public class AddressableManager : SingletonBase<AddressableManager>, ISingleton
 	{

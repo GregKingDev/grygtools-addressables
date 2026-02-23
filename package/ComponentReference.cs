@@ -5,7 +5,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEditor;
 #endif
 
-namespace GrygTools.AddressableUtils
+namespace GrygTools.AssetManagement
 {
     /// <summary>
     /// Creates an AssetReference that is restricted to having a specific Component.

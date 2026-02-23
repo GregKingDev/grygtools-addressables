@@ -1,4 +1,4 @@
-﻿namespace GrygTools.Pooling
+﻿namespace GrygTools.AssetManagement
 {
 	public interface IPoolableObject
 	{
