@@ -1,12 +1,12 @@
 {
   "name": "com.grygtools.assetmanagement",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "displayName": "GrygTools-AssetManagement",
   "description": "Addressables and pooling",
   "unity": "2020.3",
   "dependencies": {
     "com.unity.addressables": "1.21.20",
     "com.unity.textmeshpro": "3.0.6",
-	"com.grygtools.utils": "1.0.0"
+	"com.grygtools.utils": "1.0.7"
   }
 }
